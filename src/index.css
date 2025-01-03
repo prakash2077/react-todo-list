@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --bg-dark-color : #2d3250;
+    --bg-medium-color : #424769;
+    --bg-light-color : #676f9d;
+    --white : #fff;
+    --primary-color: #f9b17a;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--bg-light-color);
+    color: var(--white);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-dark-color);
+    padding: 1rem;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li{
+    list-style: none;
+}
+nav li a{
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 0.7em 1em;
+    margin-right: 1em;
+    text-decoration: none;
+    color: var(--white);
+}
+nav a:hover {
+    background: var(--bg-medium-color);
+}
+nav a.current {
+    background: #000;
+}
+
+.container{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container h1{
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+.container input.text{
+    width: 40%;
+    font-size: 1.3em;
+    padding: 0.3em 0.5em;
+    margin-bottom: 1.5em; 
+    transition: width 0.5s ease-out;
+}
+.container input.text:focus{
+    outline: none;
+    width: 60%;
+}
+.container input.text::placeholder{
+    font-style: italic;
+}
+.container input.submit{
+    background-color: var(--primary-color);
+    background-color: var(--bg-dark-color);
+    color: var(--bg-dark-color);
+    color: var(--white);
+    font-size: 1.2em;
+    padding: 0.4em 0.7em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+footer{
+    background-color: var(--bg-dark-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1em;
+}
+
+.tasks{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    padding-left: 5%;
+}
+.tasks li{
+    margin: 0.5em auto;
+}
+.tasks h2{
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+.task{
+    font-size: xx-large;
+    margin-bottom: 0.3em;
+}
+.task input{
+    width: 1.8em;
+    height: 1.8em;
+    margin-right: 1em;
+}
