@@ -124,16 +124,17 @@ footer{
 @media (max-width: 768px) {
     nav{
         flex-direction: column;
+        padding: 1.5em 0;
     }
     nav h1{
         margin-bottom: 1em;
     }
     nav ul{
-        padding: 1em;
+        padding: 0em;
         
     }
     nav li a{
-        margin-right: 1em;
+        margin-right: 0.3em;
     }
     .container h1{
         font-size: 2em;
