@@ -132,6 +132,9 @@ footer{
         padding: 1em;
         
     }
+    nav li a{
+        margin-right: 1em;
+    }
     .container h1{
         font-size: 2em;
     }    
@@ -140,5 +143,17 @@ footer{
     }
     .container input.text:focus{
         width: 80%;
+    }
+    .tasks h2{
+        font-size: 1.7em;
+    }
+    .task{
+        display: flex;
+        font-size: 1.2em;
+        margin-bottom: 1em;
+    }
+    .task input{
+        width: 1.8em;
+        height: 1.8em;
     }
 }
