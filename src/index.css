@@ -119,3 +119,26 @@ footer{
     height: 1.8em;
     margin-right: 1em;
 }
+
+/* Media query for devices with a max width of 768px (tablets and smaller) */
+@media (max-width: 768px) {
+    nav{
+        flex-direction: column;
+    }
+    nav h1{
+        margin-bottom: 1em;
+    }
+    nav ul{
+        padding: 1em;
+        
+    }
+    .container h1{
+        font-size: 2em;
+    }    
+    .container input.text{
+        width: 60%;
+    }
+    .container input.text:focus{
+        width: 80%;
+    }
+}
