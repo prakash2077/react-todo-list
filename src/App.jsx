@@ -6,30 +6,39 @@ import Tasks from "./components/Tasks";
 import ContactUs from "./components/ContactUs";
 
 const App = () => {
+  
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event) => {
+      event.preventDefault(); // Prevent the mini-infobar from appearing on mobile
+      console.log("beforeinstallprompt event triggered");
 
-  const addApp = () =>{
-  const handleBeforeInstallPrompt = (event) => {
-    console.log('beforeinstallprompt event triggered');
-    // Let the browser display the native "Install App" prompt
-    event.prompt(); // This triggers the browser's "Install App" dialog
-    event.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the PWA installation');
-      } else {
-        console.log('User dismissed the PWA installation');
+      // Show your custom install prompt UI if desired
+      // Example: Store event for later use
+      const installButton = document.getElementById("install-button");
+      if (installButton) {
+        installButton.style.display = "block";
+        installButton.onclick = () => {
+          event.prompt(); // Show the browser's install prompt
+          event.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === "accepted") {
+              console.log("User accepted the PWA installation");
+            } else {
+              console.log("User dismissed the PWA installation");
+            }
+          });
+          installButton.style.display = "none";
+        };
       }
-    });
-  };
+    };
 
-  // Listen for the beforeinstallprompt event
-  window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    // Register the event listener
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
-  return () => {
-    window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-  };
-  }
-  addApp();
-
+    // Cleanup the listener on component unmount
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    };
+  }, []); // Empty dependency array ensures this runs only once on mount
   return (
     <BrowserRouter>
       <Routes>
