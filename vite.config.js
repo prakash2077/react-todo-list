@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: 'autoUpdate', // Automatically update the service worker
       manifest: {
         name: 'GOAT IT⚡',
-        short_name: 'todolist',
+        short_name: 'GOAT IT⚡',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
