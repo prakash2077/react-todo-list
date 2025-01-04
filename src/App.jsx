@@ -6,35 +6,28 @@ import Tasks from "./components/Tasks";
 import ContactUs from "./components/ContactUs";
 
 const App = () => {
-  
+
   useEffect(() => {
     const handleBeforeInstallPrompt = (event) => {
-      event.preventDefault(); // Prevent the mini-infobar from appearing on mobile
       console.log("beforeinstallprompt event triggered");
 
-      // Show your custom install prompt UI if desired
-      // Example: Store event for later use
-      const installButton = document.getElementById("install-button");
-      if (installButton) {
-        installButton.style.display = "block";
-        installButton.onclick = () => {
-          event.prompt(); // Show the browser's install prompt
-          event.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === "accepted") {
-              console.log("User accepted the PWA installation");
-            } else {
-              console.log("User dismissed the PWA installation");
-            }
-          });
-          installButton.style.display = "none";
-        };
-      }
+      // Trigger the browser's native install prompt
+      event.prompt();
+
+      // Handle the user's choice
+      event.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the PWA installation");
+        } else {
+          console.log("User dismissed the PWA installation");
+        }
+      });
     };
 
-    // Register the event listener
+    // Register the beforeinstallprompt event listener
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
-    // Cleanup the listener on component unmount
+    // Cleanup the listener when the component unmounts
     return () => {
       window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
     };
