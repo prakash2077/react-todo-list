@@ -9,7 +9,8 @@ const Navbar = () => {
 
   return (
       <nav>
-        <h1>GOAT IT⚡</h1>
+        <div className="logo"><h1><NavLink className="home" to='/'>GOAT&nbsp;IT⚡</NavLink> </h1></div>
+        
         <ul>
           <li><NavLink className={returnClassName} to="/">Home</NavLink></li>
           <li><NavLink className={returnClassName} to="/tasks">Tasks</NavLink></li>

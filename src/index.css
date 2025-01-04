@@ -50,6 +50,21 @@ nav a:hover {
 nav a.current {
     background: #000;
 }
+.home{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.3s ease-out width;
+    display: inline-block;
+    font-size: 24px;
+    border-bottom: 2px solid #ddd;
+    width: 1.5em;
+    padding-bottom: 0.2em;
+}
+.home:hover{
+    width: 5.1em;
+    background: none;
+}
 
 .container{
     height: 90vh;
@@ -76,18 +91,21 @@ nav a.current {
 .container input.text::placeholder{
     font-style: italic;
 }
-.container input.submit{
-    background-color: var(--primary-color);
+.submit {
     background-color: var(--bg-dark-color);
-    color: var(--bg-dark-color);
     color: var(--white);
     font-size: 1.2em;
     padding: 0.4em 0.7em;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-}
+    max-width: 500px;
+}   
+.custom-submit{
+    margin-top: 1em;
+    margin-bottom: 2em;
 
+}
 footer{
     background-color: var(--bg-dark-color);
     color: var(--white);
@@ -96,7 +114,7 @@ footer{
 }
 
 .tasks{
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     margin: 2em;
@@ -106,8 +124,11 @@ footer{
     margin: 0.5em auto;
 }
 .tasks h2{
-    font-size: 3em;
-    margin-bottom: 1em;
+    color: var(--primary-color);
+    /* text-shadow: 2px 2px var(--bg-dark-color); */
+    font-size: 2em;
+    /* text-decoration: underline; */
+    margin-bottom: 0.4em;
 }
 
 .task{
