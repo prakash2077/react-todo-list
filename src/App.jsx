@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (event) => {
-      console.log("beforeinstallprompt event triggered");
+      // console.log("beforeinstallprompt event triggered");
 
       // Trigger the browser's native install prompt
       event.prompt();
@@ -28,9 +28,9 @@ const App = () => {
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     // Cleanup the listener when the component unmounts
-    return () => {
-      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    };
+    // return () => {
+    //   window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    // };
   }, []); // Empty dependency array ensures this runs only once on mount
   return (
     <BrowserRouter>
