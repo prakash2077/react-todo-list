@@ -16,8 +16,8 @@ const Navbar = () => {
           <li><NavLink className={returnClassName} to="/">Home</NavLink></li>
           <li><NavLink className={returnClassName} to="/tasks">Tasks</NavLink></li>
           <li><NavLink className={returnClassName} to="/contact-us">Contact us</NavLink></li>
-          <li><InstallPWAButton /></li>
         </ul>
+        <InstallPWAButton />
       </nav>
   )
 }

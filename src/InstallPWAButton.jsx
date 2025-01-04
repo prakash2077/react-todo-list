@@ -27,7 +27,7 @@ const InstallPWAButton = () => {
   };
 
   return promptEvent ? (
-    <button className='submit' onClick={handleInstall}>Install App</button>
+    <button className='submit-install' onClick={handleInstall}>Install App</button>
   ) : null;
 };
 
