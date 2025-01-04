@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import InstallPWAButton from '../InstallPWAButton';
 
 const Navbar = () => {
 
@@ -15,6 +16,7 @@ const Navbar = () => {
           <li><NavLink className={returnClassName} to="/">Home</NavLink></li>
           <li><NavLink className={returnClassName} to="/tasks">Tasks</NavLink></li>
           <li><NavLink className={returnClassName} to="/contact-us">Contact us</NavLink></li>
+          <li><InstallPWAButton /></li>
         </ul>
       </nav>
   )

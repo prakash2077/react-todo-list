@@ -2,7 +2,6 @@ import { ToastContainer } from 'react-toastify';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import InstallPWAButton from '../InstallPWAButton';
 const HomePage = () => {
   return (
     <>
@@ -21,7 +20,6 @@ const HomePage = () => {
         pauseOnHover
         theme="dark"
       />
-      <InstallPWAButton />
     </>
   )
 }
