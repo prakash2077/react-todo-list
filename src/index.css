@@ -26,6 +26,7 @@ nav{
     align-items: center;
     background-color: var(--bg-dark-color);
     padding: 1rem;
+    gap: 0.4em;
 }
 
 nav ul{
@@ -51,7 +52,7 @@ nav a.current {
     background: #000;
 }
 nav h1{
-    width: 6em;
+    width: 5.1em;
 }
 .home{
     display: inline-block;
