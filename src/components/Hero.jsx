@@ -1,30 +1,29 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import db from '../appwrite/databases';
 
 const Hero = () => {
   const [newTask, setNewTask] = useState('');
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if(newTask != ''){
-      const existingTasks = localStorage.getItem('savedTasks');
-      if(existingTasks){
-        // const existingTasksRa = JSON.parse(existingTasks);
-        if(existingTasks.includes(newTask.toLowerCase())){
-          toast.error("Task already Exists");
-          return;
-        }
-      }  
-      let savedTasks = localStorage.getItem('savedTasks');
-      savedTasks = savedTasks ? JSON.parse(savedTasks) : [];
-      const tempTasks = [...savedTasks, newTask];
-      localStorage.setItem('savedTasks', JSON.stringify(tempTasks));
+      
+      // Checking if the task is already existing
+      const res = await db.Tasks.list();
+      const existingTasks = res.documents.map((doc) => doc.detail.toLowerCase());
+      console.log(existingTasks)
+      if (existingTasks.includes(newTask.toLowerCase())){
+        toast.error("Task already Exists");
+        return;
+      }
+
+      // Create the Task
+      await db.Tasks.create({"detail":newTask});
       toast.success('Task Added Successfully');
+
       setNewTask('');
-    }
-    else{
+    }else{
       toast.warn('Task is Empty');
-        
-    }
-  }
+    }}
   
 
   const handleKeyDown = (e)=>{
@@ -45,4 +44,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;
