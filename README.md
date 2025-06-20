@@ -1,8 +1,4 @@
-# React + Vite
+A streamlined task management app built with React and Firebase. Users can create, edit, and delete tasks effortlessly via a clean UI, showcasing my skills in React, Firebase backend integration, and modern web design.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can check the project on live here👇:
+[Goat IT](https://goat-it-todo.vercel.app/)
